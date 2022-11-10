@@ -7,7 +7,7 @@ use clap::ArgAction;
 use clap::Command;
 use regex::Regex;
 
-pub fn execute() {
+pub fn main() {
     // manual_reading();
     // iterator_reading();
     search_file();

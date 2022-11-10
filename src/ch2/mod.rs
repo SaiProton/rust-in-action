@@ -4,7 +4,7 @@ mod mandelbrot;
 use num::complex::Complex;
 use std::time::{Duration, Instant};
 
-pub fn execute() {
+pub fn main() {
     // different_bases();
     // comparison_between_types();
     // add_floats();
@@ -13,8 +13,8 @@ pub fn execute() {
     // print_is_even(10);
     // match_values();
     //
-    // mandelbrot::execute();
-    grep_lite::execute();
+    mandelbrot::main();
+    grep_lite::main();
 }
 
 fn different_bases() {

@@ -4,14 +4,14 @@ mod fileio;
 use clap::{Arg, ArgAction, Command};
 use regex::Regex;
 
-pub fn execute() {
+pub fn main() {
     // search();
     // search_context();
     // search_regex();
     // search_arg();
 
-    // fileio::execute();
-    completed::execute();
+    fileio::main();
+    completed::main();
 }
 
 fn search() {

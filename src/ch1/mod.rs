@@ -1,7 +1,7 @@
 use std::rc::Rc;
 use std::sync::{Arc, Mutex};
 
-pub fn execute() {
+pub fn main() {
     greet_world();
     csv_data();
     different_storages();

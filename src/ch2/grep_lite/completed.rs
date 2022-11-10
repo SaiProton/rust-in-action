@@ -15,7 +15,7 @@ fn process_lines<T: BufRead + Sized>(reader: T, re: Regex) {
     }
 }
 
-pub fn execute() {
+pub fn main() {
     let args = Command::new("grep-lite")
         .version("0.1")
         .about("searches for patterns")
