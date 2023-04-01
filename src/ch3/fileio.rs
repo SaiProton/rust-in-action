@@ -61,14 +61,14 @@ impl Display for File {
     }
 }
 
-fn open(mut f: File) -> Result<File, String> {
+fn open(mut f: File) -> File {
     f.state = FileState::Open;
-    Ok(f)
+    f
 }
 
-fn close(mut f: File) -> Result<File, String> {
+fn close(mut f: File) -> File {
     f.state = FileState::Closed;
-    Ok(f)
+    f
 }
 
 pub fn main() {
@@ -76,13 +76,13 @@ pub fn main() {
 
     let mut buffer: Vec<u8> = vec![];
 
-    f1 = open(f1).unwrap();
+    f1 = open(f1);
     let f1_length = f1.read(&mut buffer).unwrap();
-    f1 = close(f1).unwrap();
+    f1 = close(f1);
 
     let text = String::from_utf8_lossy(&buffer);
 
-    println!("{}", f1);
+    println!("{f1}");
     println!("{} is {} bytes long", &f1.name, f1_length);
-    println!("{}", text);
+    println!("{text}");
 }

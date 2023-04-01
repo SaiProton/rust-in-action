@@ -5,7 +5,7 @@ static mut ERROR: isize = 0;
 struct File;
 
 #[allow(unused_variables)]
-fn read(f: &File, save_to: &mut Vec<u8>) -> usize {
+fn read(f: &File, save_to: &mut [u8]) -> usize {
     if random() && random() && random() {
         unsafe {
             ERROR = 1;
@@ -22,8 +22,6 @@ pub fn main() {
     read(&f, &mut buffer);
 
     unsafe {
-        if ERROR != 0 {
-            panic!("An error has occured!");
-        }
+        assert!(ERROR == 0, "An error has occured!");
     }
 }

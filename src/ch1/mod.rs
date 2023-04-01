@@ -47,14 +47,14 @@ fn csv_data() {
         // Only runs when running in debug mode.
         if cfg!(debug_assertions) {
             // Prints to stderr.
-            eprintln!("debug: {:?} -> {:?}", record, fields);
+            eprintln!("debug: {record:?} -> {fields:?}");
         }
 
         let name = fields[0];
 
         // if-let Ok allows for skipping any error cases when attempting to parse the number
         if let Ok(length) = fields[1].parse::<f32>() {
-            println!("{}, {}cm", name, length);
+            println!("{name}, {length}cm");
         }
     }
 }
@@ -67,7 +67,7 @@ fn different_storages() {
     // Integer wrapped in an atomic reference counter and protected by a mutual exclusion lock.
     let d = Arc::new(Mutex::new(40));
 
-    println!("a: {:?}, b: {:?}, c: {:?}, d: {:?}", a, b, c, d);
+    println!("a: {a:?}, b: {b:?}, c: {c:?}, d: {d:?}");
 }
 
 // Rust will prevent all of these things from happening.
@@ -96,7 +96,7 @@ mod rust_safety {
         ];
 
         // drop(grains); BUG: Will delete grains, making using grains later on impossible.
-        println!("{:?}", grains);
+        println!("{grains:?}");
     }
 
     pub fn race_condition() {

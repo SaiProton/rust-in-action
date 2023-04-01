@@ -26,7 +26,7 @@ fn manual_reading() {
             break;
         }
 
-        println!("{} ({} bytes long)", line, len);
+        println!("{line} ({len} bytes long)");
 
         line.truncate(0);
     }
@@ -71,7 +71,7 @@ fn search_file() {
         let line = line_.unwrap();
 
         if re.find(&line).is_some() {
-            println!("{}", line);
+            println!("{line}");
         }
     }
 }

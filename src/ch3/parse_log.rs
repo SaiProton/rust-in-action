@@ -35,6 +35,6 @@ DELETE 342:LO/22111";
 
     for line in log.lines() {
         let parse_result = parse_log(line);
-        println!("{:?}", parse_result);
+        println!("{parse_result:?}");
     }
 }

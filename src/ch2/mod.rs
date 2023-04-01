@@ -22,10 +22,10 @@ fn different_bases() {
     let thirty = 0o36; // octal
     let three_hundred = 0x12C; // dexadecimal
 
-    println!("decimal: {} {} {}", three, thirty, three_hundred);
-    println!("binary: {:b} {:b} {:b}", three, thirty, three_hundred);
-    println!("octal: {:o} {:o} {:o}", three, thirty, three_hundred);
-    println!("hexadecimal: {:x} {:x} {:x}", three, thirty, three_hundred);
+    println!("decimal: {three} {thirty} {three_hundred}");
+    println!("binary: {three:b} {thirty:b} {three_hundred:b}");
+    println!("octal: {three:o} {thirty:o} {three_hundred:o}");
+    println!("hexadecimal: {three:x} {thirty:x} {three_hundred:x}");
 }
 
 fn comparison_between_types() {
@@ -76,11 +76,11 @@ fn increment_benchmark() {
     let time_limit = Duration::new(1, 0);
     let start = Instant::now();
 
-    while (Instant::now() - start) < time_limit {
+    while start.elapsed() < time_limit {
         count += 1;
     }
 
-    println!("{}", count);
+    println!("{count}");
 }
 
 fn print_is_even(n: i32) {
@@ -93,7 +93,7 @@ fn print_is_even(n: i32) {
     //     false => "odd",
     // };
 
-    println!("{} is {}", n, description);
+    println!("{n} is {description}");
 }
 
 fn match_values() {
@@ -106,7 +106,7 @@ fn match_values() {
         };
 
         if result == "hit!" {
-            println!("{}: {}", item, result);
+            println!("{item}: {result}");
         }
     }
 }

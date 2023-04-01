@@ -25,7 +25,7 @@ What do we seek through millions of pages?";
     for (i, line) in quote.lines().enumerate() {
         if line.contains(search_term) {
             let line_num = i + 1;
-            println!("{}: {}", line_num, line);
+            println!("{line_num}: {line}");
         }
     }
 }
@@ -84,7 +84,7 @@ through millions of pages?";
         // Ref line informs the compiler that we want to borrow this value rather than move it.
         for &(i, ref line) in local_ctx.iter() {
             let line_num = i + 1;
-            println!("{}: {}", line_num, line);
+            println!("{line_num}: {line}");
         }
     }
 }
@@ -100,7 +100,7 @@ It is the same with books. What do we seek through millions of pages?";
         let contains_substring = re.find(line);
 
         if contains_substring.is_some() {
-            println!("{}", line);
+            println!("{line}");
         }
     }
 }
@@ -125,7 +125,7 @@ It is the same with books. What do we seek through millions of pages?";
 
     for line in quote.lines() {
         if re.find(line).is_some() {
-            println!("{}", line);
+            println!("{line}");
         }
     }
 }

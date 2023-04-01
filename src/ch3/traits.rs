@@ -4,11 +4,11 @@
 struct File;
 
 trait Read {
-    fn read(self: &Self, save_to: &mut Vec<u8>) -> Result<usize, String>;
+    fn read(&self, save_to: &mut Vec<u8>) -> Result<usize, String>;
 }
 
 impl Read for File {
-    fn read(self: &Self, save_to: &mut Vec<u8>) -> Result<usize, String> {
+    fn read(&self, save_to: &mut Vec<u8>) -> Result<usize, String> {
         Ok(0)
     }
 }

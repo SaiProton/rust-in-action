@@ -10,7 +10,7 @@ fn process_lines<T: BufRead + Sized>(reader: T, re: &Regex) {
         let line = line_.unwrap();
 
         if re.find(&line).is_some() {
-            println!("{}", line);
+            println!("{line}");
         }
     }
 }

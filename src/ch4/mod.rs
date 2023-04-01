@@ -81,26 +81,26 @@ pub fn main() {
         let sat = GroundStation::connect(sat_id);
 
         let msg = sat.recv(&mut mail);
-        println!("{:?}: {:?}", sat, msg);
+        println!("{sat:?}: {msg:?}");
     }
 
     // Allows for the creation of multiple mutable references.
     let base: Rc<RefCell<GroundStation>> =
         Rc::new(RefCell::new(GroundStation { radio_freq: 87.65 }));
 
-    println!("base: {:?}", base);
+    println!("base: {base:?}");
 
     {
         let mut base_2 = base.borrow_mut();
         base_2.radio_freq -= 12.34;
-        println!("base_2 {:?}", base_2);
+        println!("base_2 {base_2:?}");
     }
 
-    println!("base: {:?}", base);
+    println!("base: {base:?}");
 
     let mut base_3 = base.borrow_mut();
     base_3.radio_freq += 43.21;
 
-    println!("base: {:?}", base);
-    println!("base_3: {:?}", base_3);
+    println!("base: {base:?}");
+    println!("base_3: {base_3:?}");
 }
