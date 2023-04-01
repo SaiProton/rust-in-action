@@ -5,7 +5,7 @@ use std::io;
 use std::io::prelude::*;
 use std::io::BufReader;
 
-fn process_lines<T: BufRead + Sized>(reader: T, re: Regex) {
+fn process_lines<T: BufRead + Sized>(reader: T, re: &Regex) {
     for line_ in reader.lines() {
         let line = line_.unwrap();
 
@@ -40,10 +40,10 @@ pub fn main() {
     if input == "-" {
         let stdin = io::stdin();
         let reader = stdin.lock();
-        process_lines(reader, re);
+        process_lines(reader, &re);
     } else {
         let f = File::open(input).unwrap();
         let reader = BufReader::new(f);
-        process_lines(reader, re);
+        process_lines(reader, &re);
     }
 }

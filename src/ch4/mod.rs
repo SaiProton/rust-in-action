@@ -62,12 +62,12 @@ fn fetch_sat_ids() -> Vec<u64> {
 pub fn main() {
     let mut mail = Mailbox { messages: vec![] };
 
-    let base = GroundStation { radio_freq: 1.11 };
+    // let base = GroundStation { radio_freq: 1.11 };
 
     let sat_ids = fetch_sat_ids();
 
     for sat_id in sat_ids {
-        let sat = GroundStation::connect(sat_id);
+        // let sat = GroundStation::connect(sat_id);
         let msg = Message {
             to: sat_id,
             content: String::from("hello"),

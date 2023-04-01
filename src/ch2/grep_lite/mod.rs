@@ -80,7 +80,7 @@ through millions of pages?";
         }
     }
 
-    for local_ctx in ctx.iter() {
+    for local_ctx in &ctx {
         // Ref line informs the compiler that we want to borrow this value rather than move it.
         for &(i, ref line) in local_ctx.iter() {
             let line_num = i + 1;
@@ -100,7 +100,7 @@ It is the same with books. What do we seek through millions of pages?";
         let contains_substring = re.find(line);
 
         if contains_substring.is_some() {
-            println!("{}", line)
+            println!("{}", line);
         }
     }
 }

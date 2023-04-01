@@ -42,7 +42,7 @@ fn csv_data() {
         }
 
         // Vec<_> infers what type goes into Vec.
-        let fields: Vec<_> = record.split(',').map(|field| field.trim()).collect();
+        let fields: Vec<_> = record.split(',').map(str::trim).collect();
 
         // Only runs when running in debug mode.
         if cfg!(debug_assertions) {
@@ -100,7 +100,7 @@ mod rust_safety {
     }
 
     pub fn race_condition() {
-        let mut data = 100;
+        // let mut data = 100;
 
         // std::thread::spawn(|| {
         //     data = 500;
@@ -111,7 +111,7 @@ mod rust_safety {
         // });
         // BUG: Rust does not allow multiple places in an application to have write access to data.
 
-        println!("{}", data);
+        // println!("{}", data);
     }
 
     pub fn buffer_overflow() {
@@ -123,12 +123,12 @@ mod rust_safety {
     }
 
     pub fn iterator_modification() {
-        let mut letters = vec!["a", "b", "c"];
-
-        for letter in letters {
-            println!("{}", letter);
+        // let mut letters = vec!["a", "b", "c"];
+        //
+        // for letter in letters {
+        //     println!("{}", letter);
             // letters.push(letter.clone());
             // BUG: Rust doesn't allow the variable to be modified while in it's iteration block.
-        }
+        // }
     }
 }

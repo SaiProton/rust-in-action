@@ -55,7 +55,7 @@ fn add_floats() {
     println!("         0.3: {:x}", (xyz.2).to_bits());
     println!();
 
-    assert_eq!(abc.0 + abc.1, abc.2);
+    // assert_eq!(abc.0 + abc.1, abc.2); // strict comparison of floats is bad :(
     // assert_eq!(xyz.0 + xyz.1, xyz.2);
     // BUG: Will crash! Equality comparisons between floating point numbers should be avoided.
 
