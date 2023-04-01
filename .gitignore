@@ -1,1 +1,6 @@
-/target
+# Builds
+result
+target
+
+# Misc
+.direnv
