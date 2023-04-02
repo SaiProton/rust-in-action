@@ -80,8 +80,9 @@ pub fn main() {
     for sat_id in sat_ids {
         let sat = GroundStation::connect(sat_id);
 
-        let msg = sat.recv(&mut mail);
-        println!("{sat:?}: {msg:?}");
+        let Some(msg) = sat.recv(&mut mail) else { panic!("No message!") };
+
+        println!("{sat:?}: {0:?}", msg.content);
     }
 
     // Allows for the creation of multiple mutable references.

@@ -1,3 +1,4 @@
+#![allow(dead_code)]
 mod fileio;
 mod globalerror;
 mod parse_log;
