@@ -127,8 +127,8 @@ mod rust_safety {
         //
         // for letter in letters {
         //     println!("{}", letter);
-            // letters.push(letter.clone());
-            // BUG: Rust doesn't allow the variable to be modified while in it's iteration block.
+        // letters.push(letter.clone());
+        // BUG: Rust doesn't allow the variable to be modified while in it's iteration block.
         // }
     }
 }
